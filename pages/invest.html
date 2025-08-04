@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../src/dist/stylesheet.css" />
+    <title>وام آوا</title>
+</head>
+
+<body>
+
+
+
+
+    <!-- ads -->
+    <div
+        class="gradiant flex md:flex-row gap-4 md:gap-0 flex-col-reverse md:justify-around justify-center items-center text-white py-4">
+        <button class="border rounded-md px-4 py-2" type="button">به لیست انتظار بپیوندید</button>
+        <p class="text-lg md:text-xl">روی عملکرد شرکت های برتر جهان سرمایه گذاری کنید</p>
+    </div>
+    <!-- Navbar -->
+    <nav id="main-navbar" class="px-4 py-6 shadow">
+        <div class="container transition-transform duration-300">
+            <div class="flex flex-row items-center justify-between">
+
+                <div class="flex items-center gap-12">
+                    <div class="flex items-center gap-2">
+                        <div>🖼️</div>
+                        <div class="text-xl font-bold">لوگو</div>
+                    </div>
+                    <!-- Menu -->
+                    <ul class="hidden md:flex gap-6 items-center" x-data="{ open: null }">
+                        <li @mouseenter="open = 'investors'" @mouseleave="open = null" class="relative">
+                            <a href="#" class="hover:text-green-700 transition">سرمایه‌گذاران</a>
+
+                           
+                            <div x-show="open === 'investors'" x-transition
+                                class="absolute top-full mt-2 right-0 w-56 bg-white text-black rounded-xl shadow-lg p-4 z-50">
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">استارتاپ‌ها</a>
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">فرصت‌های رشد</a>
+                            </div>
+                        </li>
+
+                        <li @mouseenter="open = 'business'" @mouseleave="open = null" class="relative">
+                            <a href="#" class="hover:text-green-700 transition">کسب‌وکارها</a>
+
+                            
+                            <div x-show="open === 'business'" x-transition
+                                class="absolute top-full mt-2 right-0 w-56 bg-white text-black rounded-xl shadow-lg p-4 z-50">
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">درخواست سرمایه</a>
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">همکاری تجاری</a>
+                            </div>
+                        </li>
+
+                        
+                        <div
+                            class="w-full md:w-64 flex items-center gap-3 bg-zinc-100 rounded-full py-2 px-4 text-center">
+                            <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
+                            <input type="text" class="w-full bg-transparent outline-none" placeholder="جستجو">
+                        </div>
+                    </ul>
+
+
+                    <!-- Logo -->
+                </div>
+                <!-- hamburger -->
+                <div class="flex items-center gap-4 flex-row-reverse">
+                    <!-- Hamburger (only mobile) -->
+                    <button id="menu-toggle" class="md:hidden text-3xl focus:outline-none">
+                        ☰
+                    </button>
+                    <a class="md:hidden" href="#">ورود</a>
+
+                    <!-- Login (desktop only) -->
+                    <div class="hidden md:flex gap-5">
+                        <a href="#">ورود</a>
+                        <a href="#">ثبت‌نام</a>
+                        <div class="flex items-center gap-1">
+                            <i class="fa-solid fa-globe" style="color: #000000;"></i>
+                            <a href="#">ما</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu" class="hidden h-screen md:h-auto flex-col space-y-4 md:hidden mt-8">
+                <div class="w-full md:w-64 flex items-center gap-3 bg-zinc-100 rounded-full py-2 px-4 text-center">
+                    <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
+                    <input type="text" class="w-full bg-transparent outline-none" placeholder="جستجو">
+                </div>
+                <div class="flex gap-12 pt-1">
+                    <li><a href="#" class="hover:text-green-700">سرمایه‌گذاران</a></li>
+                    <li><a href="#" class="hover:text-green-700">کسب‌وکارها</a></li>
+                </div>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+    <section class="container my-12">
+        <div class="flex gap-8 items-center mb-8">
+            <!-- <div class="border h-16 w-16">
+                <img class="w-full h-auto" src="" alt="">
+            </div> -->
+            <div class="w-16 h-16 text-6xl">🖼️</div>
+            <h1 class="text-4xl md:text-5xl font-bold">در بخش وحشت الی راث (رده D) سرمایه‌گذاری کنید</h1>
+        </div>
+        <hr>
+    </section>
+
+    <!-- input and price -->
+    <section class="container my-24">
+
+        <div class="flex gap-10 md:gap-40 flex-col md:flex-row  justify-between">
+
+            <!-- input price -->
+            <div class="md:w-1/2">
+
+                <!-- input price $ -->
+                <div class="my-12">
+                    <h1 class="text-3xl font-medium mb-4">مبلغ سرمایه‌گذاری</h1>
+                    <p class="text-zinc-400 font-thin mb-6">پرداخت‌ها بلافاصله پردازش می‌شوند.</p>
+                    <input oninput="formatNumber(this)" id="formattedInput" type="text" placeholder="حداقل 1000 دلار"
+                        class="text-xl font-medium px-5 py-4 w-full border-2 border-zinc-400 rounded-xl focus:outline-none focus:shadow-md focus:shadow-zinc-500 appearance-none focus:border-blue-500 transition-colors duration-200" />
+                    <p class="mt-4 mb-4 font-thin text-sm">شما به عنوان <span>خودم</span> سرمایه گذاری میکنید</p>
+                    <hr>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold mb-2">شرایط</h1>
+                    <div class="border rounded-xl">
+                        <p class="px-4 py-6 text-sm font-bold border-b">تأیید می‌کنم که پاسخ‌های من به پرسشنامه شایستگی
+                            از آخرین سرمایه‌گذاری‌ام تغییر نکرده است. </p>
+                        <p class="px-4 py-6 text-sm font-bold border-b">این فرم الکترونیکی یک تعهد معتبر و الزام‌آور
+                            قانونی برای مشترک خواهد بود که مطابق با شرایط آن قابل اجرا است، مگر تا حدی که توسط قوانین
+                            ورشکستگی، اعسار، سازماندهی مجدد یا سایر قوانین مؤثر بر اجرای حقوق طلبکاران به طور کلی و طبق
+                            اصول انصاف محدود شده باشد.</p>
+                        <p class="px-4 py-6 text-sm font-bold border-b">مشترک یک نسخه از اسناد ارائه شده را دریافت و
+                            بررسی کرده است.</p>
+                        <p class="px-4 py-6 text-sm font-bold border-b">مشترک با تراکنش‌های مشابه آنچه در این پیشنهاد در
+                            نظر گرفته شده است، آشنا و باتجربه است و از چنان دانش و تجربه‌ای در امور مالی و تجاری
+                            برخوردار است که قادر به ارزیابی مزایا و ریسک‌های چنین تراکنش‌هایی می‌باشد.</p>
+                        <p class="px-4 py-6 text-sm font-bold border-b">مشترک، یک «سرمایه‌گذار معتبر» به معنای قانون ۵۰۱
+                            تحت قانون اوراق بهادار ۱۹۳۳ («قانون اوراق بهادار») است. مشترک، تمام اسناد مربوط به وضعیت
+                            سرمایه‌گذاری معتبر و هویت درخواستی شرکت را ظرف پانزده (۱۵) روز یا کمتر، صادقانه تکمیل خواهد
+                            کرد؛</p>
+                        <p class="px-4 py-6 text-sm font-bold border-b">وجهی که مشترک برای اوراق بهادار در نظر می‌گیرد،
+                            ناشی از پولشویی یا فعالیت‌های مشابهی که طبق قوانین و مقررات فدرال غیرقانونی تلقی می‌شوند،
+                            نخواهد بود.</p>
+                        <p class="px-4 py-6 text-sm font-bold border-b">نه مشترک و نه هیچ یک از سهامداران، اعضا، مدیران،
+                            شرکای عمومی یا محدود، مدیران، شرکت‌های وابسته یا مدیران اجرایی آن، مشمول هیچ یک از موارد سلب
+                            صلاحیت «عامل بد» که در قانون 506(d)(1)(i) تا (viii) تحت قانون اوراق بهادار (یک «رویداد سلب
+                            صلاحیت») شرح داده شده است، نمی‌شوند، به جز رویداد سلب صلاحیت تحت پوشش قانون 506(d)(2) یا
+                            (d)(3).</p>
+                        <p class="px-4 py-6 text-sm font-bold border-b">مشترک، اوراق بهادار را صرفاً به حساب خود و صرفاً
+                            برای اهداف سرمایه‌گذاری خریداری می‌کند و قصد فروش یا توزیع بخشی یا تمام اوراق بهادار از طریق
+                            فروش عمومی یا خصوصی یا سایر موارد را ندارد. مشترک متوجه است که هیچ بازار عمومی برای اوراق
+                            بهادار وجود ندارد و ممکن است لازم باشد اوراق بهادار برای مدت نامحدودی نگهداری شود.</p>
+
+
+                        <!-- check points -->
+                        <div class="">
+                            <label
+                                class="flex items-start gap-3 px-4 py-6 bg-zinc-50 border-b  cursor-pointer hover:bg-zinc-100 transition">
+                                <input type="checkbox" class="mt-1 accent-green-700 condition-checkbox"
+                                    onchange="handleChange()" />
+                                <p class="text-sm font-bold">
+                                    من متوجه هستم که این پیشنهاد از شرکت BitGo Trust، یک ارائه‌دهنده خدمات امانتداری شخص
+                                    ثالث واجد شرایط، استفاده می‌کند که به عنوان امانتدار، به عنوان دارنده قانونی اوراق
+                                    بهادار عمل خواهد کرد. من متوجه هستم که به عنوان یک سرمایه‌گذار در این پیشنهاد، از من
+                                    خواسته می‌شود که یک حساب امانتداری با شرکت BitGo Trust ایجاد کنم و قراردادهای
+                                    امانتداری خاصی، از جمله قرارداد نامزدی جامع، منعقد کنم. من اذعان می‌کنم که ممکن است
+                                    از من خواسته شود اطلاعات خاصی را برای تأیید هویت، تکمیل ایجاد حساب و نهایی کردن
+                                    سرمایه‌گذاری خود ارائه دهم. من متوجه هستم که Republic هیچ حساب امانتداری مربوط به
+                                    این پیشنهاد یا سرمایه‌گذاران آن را نگهداری یا مدیریت نمی‌کند و نخواهد کرد. من همچنین
+                                    متوجه هستم که شرکت ریپابلیک یا شرکت‌های وابسته، نمایندگان یا کارگزاران آن، هیچ
+                                    مسئولیتی در قبال خسارات، زیان‌ها، هزینه‌ها، مجازات‌ها، جریمه‌ها یا مخارج ناشی از یا
+                                    مربوط به (۱) ایجاد هرگونه حساب امانی، (۲) مدیریت هرگونه حساب امانی، (۳) استفاده
+                                    غیرمجاز یا از دست دادن هرگونه دارایی، منافع یا اوراق بهادار نگهداری شده توسط هرگونه
+                                    حساب امانی، یا (۴) هرگونه قصور شرکت امانی بیت‌گو در انجام تعهدات خود به عنوان متولی،
+                                    نخواهند داشت.
+
+                                </p>
+                            </label>
+
+                            <label
+                                class="flex items-start gap-3 px-4 py-6 bg-zinc-50 border-b  cursor-pointer hover:bg-zinc-100 transition">
+                                <input type="checkbox" class="mt-1 accent-green-700 condition-checkbox"
+                                    onchange="handleChange()" />
+                                <p class="text-sm font-bold">
+                                    این فرم الکترونیکی یک تعهد معتبر و الزام‌آور قانونی برای مشترک خواهد بود...
+                                </p>
+                            </label>
+
+                            <label
+                                class="flex items-start gap-3 px-4 py-6 bg-zinc-50 border-b  cursor-pointer hover:bg-zinc-100 transition">
+                                <input type="checkbox" class="mt-1 accent-green-700 condition-checkbox"
+                                    onchange="handleChange()" />
+                                <p class="text-sm font-bold">
+                                    مشترک یک نسخه از اسناد ارائه شده را دریافت و بررسی کرده است.
+                                </p>
+                            </label>
+
+                            <label
+                                class="flex items-start gap-3 px-4 py-6 bg-zinc-50 cursor-pointer hover:bg-zinc-100 transition">
+                                <input type="checkbox" class="mt-1 accent-green-700 condition-checkbox"
+                                    onchange="handleChange()" />
+                                <p class="text-sm font-bold">
+                                    مشترک با تراکنش‌های مشابه آشنا و باتجربه است و می‌تواند ریسک را ارزیابی کند.
+                                </p>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="my-10">
+                    <button id="submitBtn"
+                        class="bg-green-700 w-full text-white px-6 py-3 rounded-xl transition disabled:opacity-40 disabled:cursor-not-allowed"
+                        disabled>
+                        تایید سرمایه‌گذاری
+                    </button>
+
+                </div>
+
+                <p class="text-sm text-center">در مرحله بعد، از شما می‌خواهیم مدارک هویتی و اعتبارسنجی مورد نیاز را
+                    ارائه دهید.</p>
+            </div>
+
+
+            <!-- price offer -->
+            <div class="w-full md:w-3/12 my-12">
+
+                <div class="mb-4">
+                    <h1 class="text-2xl font-bold mb-2">مزایا</h1>
+                    <p class="text-zinc-400">فقط مزایای موجود نمایش داده می‌شوند. شما همچنان می‌توانید هر مبلغی را
+                        سرمایه‌گذاری کنید .</p>
+                </div>
+
+                <!-- offers -->
+                <div class="flex flex-col w-full items-start border rounded-2xl mb-6">
+                    <div onclick="setPrice(10000);handleBorderActive(this);handleChange();"
+                        class="price-option select-none border-b w-full p-6 hover:bg-zinc-100 rounded-t-2xl cursor-pointer transition duration-200">
+                        <button class="mb-2 text-lg font-bold">10,000 دلار</button>
+                        <p class="text-sm text-zinc-400">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                            استفاده از طراحان گرافیک است</p>
+                    </div>
+                    <div onclick="setPrice(100000); handleBorderActive(this);handleChange();"
+                        class="price-option select-none border-b w-full p-6 hover:bg-zinc-100 cursor-pointer transition duration-200 ">
+                        <button class="mb-2 text-lg font-bold">100,000 دلار</button>
+                        <p class="text-sm text-zinc-400">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                            استفاده از طراحان گرافیک است</p>
+                    </div>
+                    <div class=" price-option select-none border-b w-full p-6 hover:bg-zinc-100 cursor-pointer transition duration-200 "
+                        onclick="setPrice(500000);handleBorderActive(this);handleChange();">
+                        <button class=" mb-2 text-lg font-bold">500,000 دلار</button>
+                        <p class="text-sm text-zinc-400">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                            استفاده از طراحان گرافیک است</p>
+                    </div>
+                    <div onclick="setPrice(1000000);handleBorderActive(this);handleChange();"
+                        class="price-option select-none border-b w-full p-6 hover:bg-zinc-100 rounded-b-2xl cursor-pointer transition duration-200">
+                        <button class="mb-2 text-lg font-bold">1,000,000 دلار</button>
+                        <p class="text-sm text-zinc-400">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                            استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+
+
+                <!-- files -->
+                <div class="">
+                    <div class="p-4">
+                        <div>
+                            <p class="font-bold text-xl mt-4 mb-8">اسناد</p>
+
+                            <a href="#" class="flex items-center gap-2 mb-8 hover:text-blue-600">
+                                <i class="fa-regular fa-file-lines" style="color: #000000;"></i>
+                                <p>توافقنامه اشتراک</p>
+                            </a>
+
+                            <a href="#" class="flex items-center gap-2 mb-8 hover:text-blue-600">
+                                <i class="fa-regular fa-file-lines" style="color: #000000;"></i>
+                                <p>فرم</p>
+                            </a>
+
+                            <a href="#" class="flex items-center gap-2 mb-8 hover:text-blue-600">
+                                <i class="fa-regular fa-file-lines" style="color: #000000;"></i>
+                                <p>بخش وحش</p>
+                            </a>
+
+                            <a href="#" class="flex items-center gap-2 mb-8 hover:text-blue-600">
+                                <i class="fa-regular fa-file-lines" style="color: #000000;"></i>
+                                <p>افشا گری و سلب مسئولیت </p>
+                            </a>
+
+                            <a href="#" class="flex items-center gap-2 hover:text-blue-600">
+                                <i class="fa-regular fa-file-lines" style="color: #000000;"></i>
+                                <p>افشای ریسک های اضافی</p>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!-- footer -->
+    <section class="bg-[#161d2d] py-20">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <div>🖼️</div>
+                        <div class="text-xl font-bold text-white">لوگو</div>
+                    </div>
+                    <p class="font-thin text-lg text-zinc-400">فراهم کردن دسترسی همه به سرمایه‌گذاری در استارت‌آپ‌های
+                        مراحل اولیه</p>
+                    <div class="flex gap-3 items-center text-xl my-4">
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-instagram" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-linkedin" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-facebook" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-discord" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-twitter" style="color: #f8f8f8;"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="text-white">
+                    <p class="text-zinc-400 mb-2">برای سرمایه گذاران</p>
+                    <hr class="border-b border-zinc-600 mb-4 w-[70%]">
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چرا سرمایه گذاری کنیم؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چرا سرمایه گذاری کنیم؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چگونه کار می‌کند؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سوالات متداول</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">خطرات</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سیاست حفظ حریم خصوصی</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">دسترسی‌پذیری</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">تنظیمات کوکی</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">فرم CRS</p>
+                    </a>
+                </div>
+
+                <div class="text-white">
+                    <p class="text-zinc-400 mb-2">برای استارتاپ‌ها</p>
+                    <hr class="border-b border-zinc-600 mb-4 w-[70%]">
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چرا افزایش دهیم؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">یاد بگیرید</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سوالات متداول</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سازها</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">امنیت جمعیت</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">دارایی‌ها را توکنیزه کنید</p>
+                    </a>
+                </div>
+
+                <div class="text-white">
+                    <p class="text-zinc-400 mb-2">شرکت</p>
+                    <hr class="border-b border-zinc-600 mb-4 w-[70%]">
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">درباره</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">مجله</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">رویدادها</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">تماس</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">ما استخدام می‌کنیم!</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="border-b border-zinc-500 mb-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex items-center gap-4">
+                        <h1 class="text-xl font-bold border border-white text-white px-4 py-2 rounded-md">Google Play
+                        </h1>
+                        <h1 class="text-xl font-bold border border-white text-white px-4 py-2 rounded-md">App Store</h1>
+                    </div>
+                    <p class="text-lg text-zinc-400">روی اپلیکیشن سرمایه‌گذاری کنید</p>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <p class="text-white text-xl">با معرفی یک استارتاپ، ۲۵۰۰ دلار جایزه بگیرید</p>
+                    <i class="fa-solid fa-dollar-sign fa-xl" style="color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        const toggleBtn = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        function setPrice(amount) {
+            const formatted = Number(amount).toLocaleString('en-US');
+            const input = document.getElementById('formattedInput');
+            input.value = formatted;
+        }
+
+        function formatNumber(el) {
+
+            let num = el.value.replace(/,/g, '').replace(/\D/g, '');
+
+
+            if (num) {
+                el.value = Number(num).toLocaleString('en-US');
+            } else {
+                el.value = '';
+            }
+        }
+
+
+        function handleBorderActive(el) {
+            document.querySelectorAll('.price-option').forEach(div => {
+                div.classList.remove('border-blue-500', 'border', 'text-blue-500');
+            });
+            el.classList.add('border-blue-500', 'border', 'text-blue-500');
+        }
+
+
+
+
+        function handleChange() {
+            const checkboxes = document.querySelectorAll('.condition-checkbox');
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+
+            const input = document.getElementById("formattedInput");
+            const inputValue = input.value.replace(/,/g, '').trim();
+
+            const isInputValid = inputValue !== '' && !isNaN(inputValue) && Number(inputValue) >= 1000;
+
+            document.getElementById("submitBtn").disabled = !(allChecked && isInputValid);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const amountInput = document.getElementById('formattedInput');
+            const checkboxes = document.querySelectorAll('.condition-checkbox');
+
+            amountInput.addEventListener('input', () => {
+                formatNumber(amountInput);
+                handleChange();
+            });
+
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', handleChange);
+            });
+        });
+
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            // mazi in code button hast. linki k mikhay bedi ro inja bezar 👇
+            window.location.href = "/like-vamAva";
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</body>
+
+</html>

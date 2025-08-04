@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../src/dist/stylesheet.css" />
+    <title>وام آوا</title>
+</head>
+
+<body class="bg-white text-zinc-900">
+
+    <!-- ads -->
+    <div
+        class="gradiant flex md:flex-row gap-4 md:gap-0 flex-col-reverse md:justify-around justify-center items-center text-white py-4">
+        <button class="border rounded-md px-4 py-2" type="button">به لیست انتظار بپیوندید</button>
+        <p class="text-lg md:text-xl">روی عملکرد شرکت های برتر جهان سرمایه گذاری کنید</p>
+    </div>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav id="main-navbar" class="px-4 py-6 shadow">
+        <div class="container transition-transform duration-300">
+            <div class="flex flex-row items-center justify-between">
+
+                <div class="flex items-center gap-12">
+                    <div class="flex items-center gap-2">
+                        <div>🖼️</div>
+                        <div class="text-xl font-bold">لوگو</div>
+                    </div>
+                    <!-- Menu -->
+                    <ul class="hidden md:flex gap-6 items-center" x-data="{ open: null }">
+                        <li @mouseenter="open = 'investors'" @mouseleave="open = null" class="relative">
+                            <a href="#" class="hover:text-green-700 transition">سرمایه‌گذاران</a>
+
+                           
+                            <div x-show="open === 'investors'" x-transition
+                                class="absolute top-full mt-2 right-0 w-56 bg-white text-black rounded-xl shadow-lg p-4 z-50">
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">استارتاپ‌ها</a>
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">فرصت‌های رشد</a>
+                            </div>
+                        </li>
+
+                        <li @mouseenter="open = 'business'" @mouseleave="open = null" class="relative">
+                            <a href="#" class="hover:text-green-700 transition">کسب‌وکارها</a>
+
+                            
+                            <div x-show="open === 'business'" x-transition
+                                class="absolute top-full mt-2 right-0 w-56 bg-white text-black rounded-xl shadow-lg p-4 z-50">
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">درخواست سرمایه</a>
+                                <a href="#" class="block px-2 py-1 hover:text-green-700 text-sm">همکاری تجاری</a>
+                            </div>
+                        </li>
+
+                        
+                        <div
+                            class="w-full md:w-64 flex items-center gap-3 bg-zinc-100 rounded-full py-2 px-4 text-center">
+                            <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
+                            <input type="text" class="w-full bg-transparent outline-none" placeholder="جستجو">
+                        </div>
+                    </ul>
+
+
+                    <!-- Logo -->
+                </div>
+                <!-- hamburger -->
+                <div class="flex items-center gap-4 flex-row-reverse">
+                    <!-- Hamburger (only mobile) -->
+                    <button id="menu-toggle" class="md:hidden text-3xl focus:outline-none">
+                        ☰
+                    </button>
+                    <a class="md:hidden" href="#">ورود</a>
+
+                    <!-- Login (desktop only) -->
+                    <div class="hidden md:flex gap-5">
+                        <a href="#">ورود</a>
+                        <a href="#">ثبت‌نام</a>
+                        <div class="flex items-center gap-1">
+                            <i class="fa-solid fa-globe" style="color: #000000;"></i>
+                            <a href="#">ما</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu" class="hidden h-screen md:h-auto flex-col space-y-4 md:hidden mt-8">
+                <div class="w-full md:w-64 flex items-center gap-3 bg-zinc-100 rounded-full py-2 px-4 text-center">
+                    <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
+                    <input type="text" class="w-full bg-transparent outline-none" placeholder="جستجو">
+                </div>
+                <div class="flex gap-12 pt-1">
+                    <li><a href="#" class="hover:text-green-700">سرمایه‌گذاران</a></li>
+                    <li><a href="#" class="hover:text-green-700">کسب‌وکارها</a></li>
+                </div>
+
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container my-16">
+        <div>
+            <h1 class="font-bold text-4xl md:text-5xl mb-4">فرصت‌های سرمایه‌گذاری</h1>
+            <p class="text-zinc-400 mb-1">فرصت‌های سرمایه‌گذاری فعلی را در ریپابلیک مرور کنید.
+            </p>
+            <p class="text-zinc-400">همه شرکت‌ها <a href="#" class="inline-block text-blue-700 hover:underline">بررسی و
+                    مراحل لازم را پشت سر می‌گذارند.</a></p>
+        </div>
+    </section>
+
+
+    <section class="container my-24">
+        <h1 class="text-3xl font-bold mb-5">فرصت های زنده</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a> <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <hr class="border border-b border-zinc-300 mt-16 mb-8">
+        <h1 class="text-3xl font-bold mb-8">فرصت‌های تأمین مالی‌شده<span class="text-zinc-400 px-2">277</span></h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a> <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div
+                    class="cursor-pointer card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] group-hover:h-[420px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 ">
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                            <p class="py-2 text-sm border-t mt-2">سرمایه‌گذاران: <span class="font-bold">28</span></p>
+                            <p class="py-2 text-sm border-t mt-2">مطرح شده: <span class="font-bold">333،565،000
+                                    دلار</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="block">
+                <div class="card group relative rounded-2xl overflow-hidden border border-zinc-300 max-w-sm  h-[600px]">
+
+                    <div class="relative">
+                        <img class="w-full h-auto object-cover" src="../src/images/cat.jpg" alt="cat-pic" />
+
+                        <div class="absolute top-2 right-2 text-sm font-bold">
+                            <div class="flex gap-1">
+                                <p class=" bg-white rounded-lg  px-3 py-1 text-blue-800">جدید</p>
+                                <p class=" bg-green-500 rounded-lg  px-3 py-1 text-white">کاملا محفوظ</p>
+                                <p class=" bg-white rounded-lg  px-3 py-1">لیست انتظار</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-white z-10 transition-all duration-200 ease-in-out h-[305px] shadow-md ">
+
+                        <div class="relative p-4 z-10">
+
+                            <div class="absolute -top-10 right-5 w-16 h-16 p-1 bg-white rounded-lg shadow-md z-50">
+                                <img class="w-full h-full rounded-full" src="../src/images/pro.png" alt="icon" />
+                            </div>
+
+
+                            <div class="mb-16 mt-8">
+                                <h1 class="text-xl font-bold my-2">لورم ایپسوم متن</h1>
+                                <p class="text-sm text-zinc-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم. سلام
+                                    مشکل از
+                                    بک انده.</p>
+                            </div>
+
+
+                            <div class="pt-2">
+                                <h5 class="text-sm text-zinc-600 mb-1">اصفهان ، قلعه قاسم</h5>
+                                <p class="text-xs bg-gray-200 px-3 py-1 rounded-lg w-fit text-zinc-700">فناوری</p>
+                                <p class="text-xs text-zinc-400 mt-2">لورم ایپسوم متن ساختگی</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </section>
+
+    <div class="flex gap-2 items-center justify-center mb-8">
+        <h1 class="text-xl text-zinc-400">بارگیری</h1>
+        <div class="spinner w-fit"></div>
+    </div>
+
+     <section class="bg-[#161d2d] py-20">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <div>🖼️</div>
+                        <div class="text-xl font-bold text-white">لوگو</div>
+                    </div>
+                    <p class="font-thin text-lg text-zinc-400">فراهم کردن دسترسی همه به سرمایه‌گذاری در استارت‌آپ‌های
+                        مراحل اولیه</p>
+                    <div class="flex gap-3 items-center text-xl my-4">
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-instagram" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-linkedin" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-facebook" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-discord" style="color: #f8f8f8;"></i>
+                        </a>
+                        <a class="hover:text-zinc-300" href="#">
+                            <i class="fa-brands fa-twitter" style="color: #f8f8f8;"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="text-white">
+                    <p class="text-zinc-400 mb-2">برای سرمایه گذاران</p>
+                    <hr class="border-b border-zinc-600 mb-4 w-[70%]">
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چرا سرمایه گذاری کنیم؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چرا سرمایه گذاری کنیم؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چگونه کار می‌کند؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سوالات متداول</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">خطرات</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سیاست حفظ حریم خصوصی</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">دسترسی‌پذیری</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">تنظیمات کوکی</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">فرم CRS</p>
+                    </a>
+                </div>
+
+                <div class="text-white">
+                    <p class="text-zinc-400 mb-2">برای استارتاپ‌ها</p>
+                    <hr class="border-b border-zinc-600 mb-4 w-[70%]">
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">چرا افزایش دهیم؟</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">یاد بگیرید</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سوالات متداول</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">سازها</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">امنیت جمعیت</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">دارایی‌ها را توکنیزه کنید</p>
+                    </a>
+                </div>
+
+                <div class="text-white">
+                    <p class="text-zinc-400 mb-2">شرکت</p>
+                    <hr class="border-b border-zinc-600 mb-4 w-[70%]">
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">درباره</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">مجله</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">رویدادها</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">تماس</p>
+                    </a>
+                    <a class="my-2 block" href="#">
+                        <p class="text-white text-lg">ما استخدام می‌کنیم!</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="border-b border-zinc-500 mb-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex items-center gap-4">
+                        <h1 class="text-xl font-bold border border-white text-white px-4 py-2 rounded-md">Google Play</h1>
+                       <h1 class="text-xl font-bold border border-white text-white px-4 py-2 rounded-md">App Store</h1>
+                    </div>
+                    <p class="text-lg text-zinc-400">روی اپلیکیشن سرمایه‌گذاری کنید</p>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <p class="text-white text-xl">با معرفی یک استارتاپ، ۲۵۰۰ دلار جایزه بگیرید</p>
+                    <i class="fa-solid fa-dollar-sign fa-xl" style="color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+ <script>
+        const toggleBtn = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+
+        const navbar = document.getElementById("main-navbar");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 120) {
+                navbar.classList.add("fixed", "top-0", "z-50", "bg-white", "shadow-xl", "left-0", "right-0");
+            } else {
+                navbar.classList.remove("fixed", "top-0", "z-50", "bg-white", "shadow-xl", "left-0", "right-0");
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</body>
+
+</html>
